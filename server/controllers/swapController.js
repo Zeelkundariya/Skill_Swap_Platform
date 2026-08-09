@@ -1,7 +1,7 @@
 const asyncHandler = require('express-async-handler');
 const SwapRequest = require('../models/swapRequestModel');
 const User = require('../models/userModel');
-// const { awardXP } = require('../services/xpService');
+const { awardXP } = require('../services/xpService');
 
 // @desc    Create new swap request
 // @route   POST /api/swaps/request
@@ -159,12 +159,15 @@ const completeSwapRequest = asyncHandler(async (req, res) => {
       status: 'COMPLETED' 
     });
 
-    // const senderGamification = await awardXP(request.senderId, 50, completedSwapsCountSender);
-    // const receiverGamification = await awardXP(request.receiverId, 50, completedSwapsCountReceiver);
+    const senderGamification = await awardXP(request.senderId, 50, completedSwapsCountSender);
+    const receiverGamification = await awardXP(request.receiverId, 50, completedSwapsCountReceiver);
 
     res.json({ 
       success: true,
-      message: 'Swap completed and feedback submitted'
+      message: 'Swap completed and feedback submitted',
+      data: {
+        gamification: req.user._id.toString() === request.senderId.toString() ? senderGamification : receiverGamification
+      }
     });
   } else {
     res.status(404);
