@@ -48,7 +48,7 @@ export default function ProfileEditModal({ isOpen, onClose, user, onSave }) {
         const fileData = new FormData();
         fileData.append('profilePhoto', selectedFile);
 
-        const uploadRes = await fetch('http://localhost:5000/api/users/upload', {
+        const uploadRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/upload`, {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -76,7 +76,7 @@ export default function ProfileEditModal({ isOpen, onClose, user, onSave }) {
         skillsWanted: processSkills(formData.skillsWanted)
       };
 
-      const res = await fetch('http://localhost:5000/api/users/me', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/me`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

@@ -17,7 +17,7 @@ export const useAuthStore = create((set, get) => ({
   },
   logout: async () => {
     try {
-      await fetch('http://localhost:5000/api/auth/logout', { method: 'POST' });
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/logout`, { method: 'POST' });
     } catch (e) {
       console.error('Logout API failed', e);
     }
@@ -29,7 +29,7 @@ export const useAuthStore = create((set, get) => ({
       const token = localStorage.getItem('token');
       if (token) {
         try {
-          const res = await fetch('http://localhost:5000/api/auth/me', {
+          const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/auth/me`, {
             headers: { Authorization: `Bearer ${token}` }
           });
           const data = await res.json();

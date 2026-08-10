@@ -34,8 +34,8 @@ export default function Explore() {
     setError(null);
     try {
       const url = searchQuery
-        ? `http://localhost:5000/api/users/search?skill=${searchQuery}`
-        : 'http://localhost:5000/api/users/search';
+        ? `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/search?skill=${searchQuery}`
+        : `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/search`;
 
       const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null;
       const headers = token ? { Authorization: `Bearer ${token}` } : {};
