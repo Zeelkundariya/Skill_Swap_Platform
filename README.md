@@ -1,7 +1,6 @@
 # Skill Swap Platform 🔄
 
 ## 🌐 Live Deployments
-- **Backend API (Render)**: [https://skill-swap-platform-ss6u.onrender.com](https://skill-swap-platform-ss6u.onrender.com)
 - **Frontend App (Vercel)**: [https://skill-swap-platform-zeta.vercel.app/](https://skill-swap-platform-zeta.vercel.app/)
 - **Technical Documentation (PDF)**: [https://skill-swap-platform-zeta.vercel.app/DOCUMENTATION.pdf](https://skill-swap-platform-zeta.vercel.app/DOCUMENTATION.pdf)
 
