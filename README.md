@@ -4,6 +4,7 @@
 - **Frontend App (Vercel)**: [https://skill-swap-platform-zeta.vercel.app/](https://skill-swap-platform-zeta.vercel.app/)
 - **Technical Documentation (PDF)**: [https://skill-swap-platform-zeta.vercel.app/DOCUMENTATION.pdf](https://skill-swap-platform-zeta.vercel.app/DOCUMENTATION.pdf)
 - **Project Presentation (Google Slides)**: [https://docs.google.com/presentation/d/1DeVAp7DqIqFZ_UY43_ZQ8_hyzGMeWidX/edit](https://docs.google.com/presentation/d/1DeVAp7DqIqFZ_UY43_ZQ8_hyzGMeWidX/edit)
+- **Demo Video (Google Drive)**: [https://drive.google.com/file/d/1MP4lFQI3XED_5r8knRTTOTCIZSVzPCOL/view?usp=sharing](https://drive.google.com/file/d/1MP4lFQI3XED_5r8knRTTOTCIZSVzPCOL/view?usp=sharing)
 
 ---
 
