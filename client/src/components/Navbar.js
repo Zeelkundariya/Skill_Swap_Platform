@@ -88,8 +88,12 @@ export default function Navbar() {
                   Calendar
                 </Link>
                 <Link href="/dashboard">
-                  <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-1 text-secondary hover:text-primary font-medium transition-colors">
-                    <User className="w-5 h-5" />
+                  <motion.div whileHover={{ scale: 1.02 }} className="flex items-center gap-2 text-secondary hover:text-primary font-medium transition-colors">
+                    <img 
+                      src={user?.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(user?.name || '')}&background=EBF4FF&color=2563EB&bold=true`} 
+                      alt="" 
+                      className="w-6 h-6 rounded-full object-cover border border-black/5" 
+                    />
                     <span>{user?.name}</span>
                   </motion.div>
                 </Link>

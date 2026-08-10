@@ -181,11 +181,11 @@ export default function Explore() {
                     <div className="flex items-center space-x-4">
                       <div className="relative">
                         <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center border-2 border-white shadow-sm overflow-hidden z-10 relative">
-                          {user.profilePicture ? (
-                            <img src={user.profilePicture} alt={user.name} className="w-full h-full object-cover" />
-                          ) : (
-                            <User className="w-6 h-6 text-primary" />
-                          )}
+                          <img 
+                            src={user.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=EBF4FF&color=2563EB&bold=true`} 
+                            alt={user.name} 
+                            className="w-full h-full object-cover" 
+                          />
                         </div>
                         <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full z-20"></div>
                       </div>

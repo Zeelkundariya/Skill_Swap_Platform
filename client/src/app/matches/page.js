@@ -221,11 +221,11 @@ function PremiumMatchCard({ user, onCompare }) {
           <div className="flex flex-col md:flex-row items-center gap-6">
             <div className="relative shrink-0">
               <div className="w-32 h-32 md:w-28 md:h-28 bg-white rounded-full flex items-center justify-center border-4 border-primary shadow-lg overflow-hidden z-10 relative">
-                {user.profilePicture ? (
-                  <img src={user.profilePicture} alt={user.name} className="w-full h-full object-cover" />
-                ) : (
-                  <User className="w-12 h-12 text-primary" />
-                )}
+                <img 
+                  src={user.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=EBF4FF&color=2563EB&bold=true`} 
+                  alt={user.name} 
+                  className="w-full h-full object-cover" 
+                />
               </div>
               <div className="absolute -bottom-3 right-1/2 translate-x-1/2 md:translate-x-0 md:-right-3 bg-white px-3 py-1 rounded-full border border-black/10 shadow-sm flex items-center gap-1">
                 <Star className="w-3 h-3 fill-yellow-500 text-yellow-500" />
@@ -452,7 +452,11 @@ function OtherMatchCard({ user, idx }) {
       <div className="flex justify-between items-start mb-4 relative z-10">
         <div className="flex items-center gap-4">
           <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center border border-primary/20 overflow-hidden">
-            {user.profilePicture ? <img src={user.profilePicture} alt={user.name} className="w-full h-full object-cover" /> : <User className="w-6 h-6 text-primary" />}
+            <img 
+              src={user.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(user.name)}&background=EBF4FF&color=2563EB&bold=true`} 
+              alt={user.name} 
+              className="w-full h-full object-cover" 
+            />
           </div>
           <div>
             <h3 className="font-bold text-primary text-lg">{user.name}</h3>
@@ -532,7 +536,11 @@ function CompareModal({ currentUser, compareUser, onClose, otherMatches, onSelec
             <div className="col-span-1 text-center bg-primary/5 rounded-2xl p-6 border border-primary/10 relative overflow-hidden">
               <div className="absolute top-0 left-0 right-0 h-1 bg-primary"></div>
               <div className="w-16 h-16 bg-white rounded-full mx-auto mb-3 border border-black/10 flex items-center justify-center overflow-hidden">
-                {compareUser.profilePicture ? <img src={compareUser.profilePicture} alt="" className="w-full h-full object-cover"/> : <User className="w-8 h-8 text-primary"/>}
+                <img 
+                  src={compareUser.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(compareUser.name)}&background=EBF4FF&color=2563EB&bold=true`} 
+                  alt="" 
+                  className="w-full h-full object-cover" 
+                />
               </div>
               <h3 className="font-bold text-primary text-lg">{compareUser.name}</h3>
               <div className="text-3xl font-black text-primary mt-2">{compareUser.score}%</div>
@@ -544,7 +552,11 @@ function CompareModal({ currentUser, compareUser, onClose, otherMatches, onSelec
               {secondUser ? (
                 <>
                   <div className="w-16 h-16 bg-white rounded-full mx-auto mb-3 border border-black/10 flex items-center justify-center overflow-hidden">
-                    {secondUser.profilePicture ? <img src={secondUser.profilePicture} alt="" className="w-full h-full object-cover"/> : <User className="w-8 h-8 text-secondary"/>}
+                    <img 
+                      src={secondUser.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(secondUser.name)}&background=EBF4FF&color=2563EB&bold=true`} 
+                      alt="" 
+                      className="w-full h-full object-cover" 
+                    />
                   </div>
                   <h3 className="font-bold text-primary text-lg">{secondUser.name}</h3>
                   <div className="text-3xl font-black text-secondary mt-2">{secondUser.score}%</div>

@@ -365,7 +365,11 @@ export default function Roadmaps() {
                           <div className="flex items-center justify-between gap-4">
                             <div className="flex items-center gap-3">
                               <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center border border-black/10 overflow-hidden flex-shrink-0">
-                                {mentor.profilePicture ? <img src={mentor.profilePicture} alt={mentor.name} className="w-full h-full object-cover" /> : <User className="w-5 h-5 text-primary" />}
+                                <img 
+                                  src={mentor.profilePicture || `https://ui-avatars.com/api/?name=${encodeURIComponent(mentor.name)}&background=EBF4FF&color=2563EB&bold=true`} 
+                                  alt={mentor.name} 
+                                  className="w-full h-full object-cover" 
+                                />
                               </div>
                               <div>
                                 <h4 className="font-bold text-primary text-sm leading-none mb-1">{mentor.name}</h4>
