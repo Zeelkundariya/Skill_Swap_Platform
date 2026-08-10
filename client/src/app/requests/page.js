@@ -28,7 +28,7 @@ export default function Requests() {
 
   const fetchRequests = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/my-requests`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/swaps/my-requests`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -49,7 +49,7 @@ export default function Requests() {
   const handleAction = async (id, action) => {
     try {
       const method = action === 'cancel' ? 'DELETE' : 'PUT';
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/${id}/${action}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/swaps/${id}/${action}`, {
         method,
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -65,7 +65,7 @@ export default function Requests() {
 
   const submitFeedback = async (id) => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/${id}/complete`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/swaps/${id}/complete`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ export default function Requests() {
     try {
       // Basic date/time parsing
       const scheduledDate = new Date(`${scheduleData.date}T${scheduleData.time}`).toISOString();
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/${id}/schedule`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/swaps/${id}/schedule`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

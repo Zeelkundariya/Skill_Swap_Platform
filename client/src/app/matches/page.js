@@ -74,7 +74,7 @@ export default function AIMatches() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/matches`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/users/matches`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }

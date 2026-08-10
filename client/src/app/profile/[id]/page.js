@@ -34,7 +34,7 @@ export default function ProfileView() {
       const token = localStorage.getItem('token');
       
       // First check if it's the current user
-      const meRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/me`, {
+      const meRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/users/me`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (meRes.ok) {
@@ -47,7 +47,7 @@ export default function ProfileView() {
       }
 
       // If not current user, search other public users
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/${userId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       

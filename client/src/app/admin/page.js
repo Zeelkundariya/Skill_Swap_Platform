@@ -25,7 +25,7 @@ export default function AdminDashboard() {
 
   const fetchUsers = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/admin/users', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/users`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
         }
@@ -45,7 +45,7 @@ export default function AdminDashboard() {
 
   const toggleBan = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/users/${id}/ban`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/users/${id}/ban`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`
@@ -61,7 +61,7 @@ export default function AdminDashboard() {
 
   const moderateBio = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/users/${id}/moderate-bio`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/admin/users/${id}/moderate-bio`, {
         method: 'PUT',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`

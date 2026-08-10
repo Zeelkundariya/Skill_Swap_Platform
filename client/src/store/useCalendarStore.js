@@ -10,7 +10,7 @@ export const useCalendarStore = create((set, get) => ({
     set({ isLoading: true, error: null });
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/my-requests`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/swaps/my-requests`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!res.ok) throw new Error('Failed to fetch sessions');
@@ -32,7 +32,7 @@ export const useCalendarStore = create((set, get) => ({
   rescheduleSession: async (swapId, newDate, newDuration) => {
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/${swapId}/schedule`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/swaps/${swapId}/schedule`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -60,7 +60,7 @@ export const useCalendarStore = create((set, get) => ({
       const token = localStorage.getItem('token');
       const availabilityString = JSON.stringify(availabilityData);
       
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/me`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`}/api/users/me`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

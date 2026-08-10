@@ -40,7 +40,7 @@ export default function Chat() {
     if (!user) return;
     
     // Connect to Socket.IO
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}`);
     
     socketRef.current.on('connect', () => {
       socketRef.current.emit('join_room', user._id);
@@ -92,7 +92,7 @@ export default function Chat() {
 
   const fetchConversations = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/messages/conversations/all', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/messages/conversations/all`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       if (res.ok) {
@@ -115,7 +115,7 @@ export default function Chat() {
   const fetchMessages = async (userId, updateLoading = true) => {
     if (updateLoading && messages.length === 0) setLoading(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/messages/${userId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/messages/${userId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       if (res.ok) {
@@ -148,7 +148,7 @@ export default function Chat() {
     setMessages([...messages, tempMsg]);
 
     try {
-      const res = await fetch('http://localhost:5000/api/messages', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/messages`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

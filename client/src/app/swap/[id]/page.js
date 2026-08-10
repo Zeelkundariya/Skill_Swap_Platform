@@ -37,7 +37,7 @@ export default function RequestSwap() {
 
   const fetchTargetUser = async (userId) => {
     try {
-      const res = await fetch(`http://localhost:5000/api/users/${userId}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/users/${userId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
       });
       const data = await res.json();
@@ -72,7 +72,7 @@ export default function RequestSwap() {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/swaps/request', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/swaps/request`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
