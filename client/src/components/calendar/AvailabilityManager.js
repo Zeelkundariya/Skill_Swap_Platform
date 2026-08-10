@@ -18,8 +18,13 @@ export default function AvailabilityManager() {
   useEffect(() => {
     if (user?.availability) {
       try {
-        const parsed = JSON.parse(user.availability);
-        setAvailability(parsed);
+        const isJson = user.availability.trim().startsWith('{');
+        if (isJson) {
+          const parsed = JSON.parse(user.availability);
+          setAvailability(parsed);
+        } else {
+          setAvailability({});
+        }
       } catch (e) {
         console.error('Failed to parse availability', e);
         setAvailability({});
