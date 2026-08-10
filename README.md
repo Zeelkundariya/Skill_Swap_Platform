@@ -57,7 +57,6 @@ To ensure a safe, high-quality, and spam-free learning environment, the platform
 ---
 
 ## 🗺️ User Journey / Flow
-
 1. **Onboarding**: A new user signs up, verifies their email, and sets up their profile, listing "Python" as a skill offered and "UI Design" as a skill wanted.
 2. **Discovery**: The user searches for "UI Design" and finds a highly-rated designer who happens to want to learn Python.
 3. **The Handshake**: The user sends a Swap Request. The designer reviews the user's profile and accepts the request.
