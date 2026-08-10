@@ -1,5 +1,11 @@
 # Skill Swap Platform 🔄
 
+## 🌐 Live Deployments
+- **Backend API (Render)**: [https://skill-swap-platform-ss6u.onrender.com](https://skill-swap-platform-ss6u.onrender.com)
+- **Frontend App (Vercel)**: *Deploying...*
+
+---
+
 ## 📖 Overview & Motivation
 The **Skill Swap Platform** is a collaborative web application designed to connect individuals who want to exchange knowledge. In a world where high-quality education and mentorship can be expensive, this platform breaks down financial barriers by enabling users to list the skills they can teach and request the skills they want to learn. It facilitates a 1-on-1 "skill swap" without any monetary transactions—creating a self-sustaining ecosystem of continuous, peer-to-peer learning.
 
